@@ -1,0 +1,3 @@
+/home/students/o/s/ostafin/Documents/optim-labs/cmake-build-debug/CMakeFiles/optim_labs.dir
+/home/students/o/s/ostafin/Documents/optim-labs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/students/o/s/ostafin/Documents/optim-labs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
