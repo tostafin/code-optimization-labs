@@ -41,5 +41,10 @@ Check: -4.605781e+16
 call GETime: 1.581070e+00
 Check: -4.605781e+16
 
-call GETime: 6.716650e-01
+-match=native
+call GETime: 6.385260e-01
+Check: -4.605781e+16
+
+-mfma
+call GETime: 6.841190e-01
 Check: -4.605781e+16
