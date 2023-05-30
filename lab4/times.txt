@@ -1,0 +1,45 @@
+2.1
+call GETime: 6.313335e+00
+Check: -4.605781e+16
+
+2.2
+call GETime: 4.030492e+00
+Check: -4.605781e+16
+
+call GETime: 1.530659e+00
+Check: -4.605781e+16
+
+2.3
+call GETime: 2.586192e+00
+Check: -4.605781e+16
+
+call GETime: 9.256820e-01
+Check: -4.605781e+16
+
+2.4
+call GETime: 3.324631e+00
+Check: -4.605781e+16
+
+call GETime: 9.157040e-01
+Check: -4.605781e+16
+
+2.5
+call GETime: 3.277676e+00
+Check: -4.605781e+16
+
+call GETime: 1.213748e+00
+Check: -4.605781e+16
+
+2.6
+call GETime: 2.766782e+00
+Check: -4.605781e+16
+
+call GETime: 8.473920e-01
+Check: -4.605781e+16
+
+2.7
+call GETime: 1.581070e+00
+Check: -4.605781e+16
+
+call GETime: 6.716650e-01
+Check: -4.605781e+16
