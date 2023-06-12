@@ -75,3 +75,41 @@ Check: 1.278343e+13
 $ gcc -O2 ver6.c && ./a.out
 Time: 1.277388e+00 
 Check: 1.278343e+13
+
+ver7:
+AVX vectors
+
+$ gcc -mavx ver7.c && ./a.out
+Time: 1.949933e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -march=native ver7.c && ./a.out
+Time: 1.843155e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -mfma ver7.c && ./a.out
+Time: 1.743650e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -march=native -mfma ver7.c && ./a.out
+Time: 1.842715e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 ver7.c && ./a.out
+Time: 1.763218e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 -march=native ver7.c && ./a.out
+call LUPDecompose
+Time: 1.449270e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 -mfma ver7.c && ./a.out
+call LUPDecompose
+Time: 1.293382e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 -march=native -mfma ver7.c && ./a.out
+call LUPDecompose
+Time: 1.362646e+00 
+Check: 1.278343e+13
