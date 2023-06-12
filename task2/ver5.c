@@ -5,7 +5,7 @@
 #include <math.h>
 #include <assert.h>
 
-#define SIZE 2500
+#define SIZE 1500
 #define BLKSIZE 8
 
 #define IDX(i, j, n) (((j)+ (i)*(n)))

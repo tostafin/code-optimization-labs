@@ -1,155 +1,172 @@
 ++ gcc ver0.c
 ++ ./a.out
 call LUPDecompose
-Time: 2.773281e+01 
+Time: 2.387985e+01 
 Check: 2.114190e+13 
 ++ gcc ver0.c -O2
 ++ ./a.out
 call LUPDecompose
-Time: 7.069471e+00 
+Time: 6.503999e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc ver1.c
 ++ ./a.out
 call LUPDecompose
-Time: 1.826382e+01 
+Time: 1.781204e+01 
 Check: 2.114190e+13 
 ++ gcc ver1.c -O2
 ++ ./a.out
 call LUPDecompose
-Time: 7.252000e+00 
+Time: 6.237020e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc ver2.c
 ++ ./a.out
 call LUPDecompose
-Time: 1.832996e+01 
+Time: 1.767001e+01 
 Check: 2.114190e+13 
 ++ gcc ver2.c -O2
 ++ ./a.out
 call LUPDecompose
-Time: 7.189671e+00 
+Time: 6.237561e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc ver3.c
 ++ ./a.out
 call LUPDecompose
-Time: 1.148213e+01 
+Time: 1.079676e+01 
 Check: 2.114190e+13 
 ++ gcc ver3.c -O2
 ++ ./a.out
 call LUPDecompose
-Time: 7.574769e+00 
+Time: 6.388779e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc ver4.c
 ++ ./a.out
 call LUPDecompose
-Time: 9.831235e+00 
+Time: 9.054501e+00 
 Check: 2.114190e+13 
 ++ gcc ver4.c -O2
 ++ ./a.out
 call LUPDecompose
-Time: 7.211223e+00 
+Time: 6.333696e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc ver5.c
 ++ ./a.out
 call LUPDecompose
-Time: 1.007365e+01 
+Time: 9.192333e+00 
 Check: 2.114190e+13 
 ++ gcc ver5.c -O2
 ++ ./a.out
 call LUPDecompose
-Time: 7.278377e+00 
+Time: 6.215936e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc ver6.c
 ++ ./a.out
 call LUPDecompose
-Time: 9.526885e+00 
+Time: 8.935905e+00 
 Check: 2.114190e+13 
 ++ gcc ver6.c -O2
 ++ ./a.out
 call LUPDecompose
-Time: 6.953717e+00 
+Time: 5.924946e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc -mavx ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.862592e+00 
+Time: 6.918600e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -march=native ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.944642e+00 
+Time: 7.298170e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -mfma ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.889634e+00 
+Time: 6.927644e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -march=native -mfma ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.753014e+00 
+Time: 7.048321e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 6.020808e+00 
+Time: 5.227007e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 -march=native ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 6.319188e+00 
+Time: 5.514648e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 -mfma ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 6.047119e+00 
+Time: 5.106122e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 -march=native -mfma ver7.c
 ++ ./a.out
 call LUPDecompose
-Time: 6.277622e+00 
+Time: 5.564477e+00 
 Check: 2.114190e+13 
+++ echo ''
+
 ++ gcc -mavx ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.761621e+00 
+Time: 6.750474e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -march=native ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.710734e+00 
+Time: 6.945871e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -mfma ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.686310e+00 
+Time: 6.865038e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -march=native -mfma ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 8.051523e+00 
+Time: 6.894349e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 6.029474e+00 
+Time: 5.123011e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 -march=native ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 6.443042e+00 
+Time: 5.399603e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 -mfma ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 5.841399e+00 
+Time: 5.471484e+00 
 Check: 2.114190e+13 
 ++ gcc -mavx -O2 -march=native -mfma ver8.c
 ++ ./a.out
 call LUPDecompose
-Time: 6.301219e+00 
+Time: 5.787287e+00 
 Check: 2.114190e+13 
-++ gcc -mavx512f ver8.c
+++ echo ''
+
+++ gcc -mavx512f ver9.c
 ++ ./a.out
 call LUPDecompose
-Time: 7.964866e+00 
-Check: 2.114190e+13
+./run.sh: line 51:  3769 Illegal instruction     (core dumped) ./a.out
