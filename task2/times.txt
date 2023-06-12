@@ -53,3 +53,25 @@ Check: 1.278343e+13
 $ gcc -O2 ver4.c && ./a.out
 Time: 1.890421e+00 
 Check: 1.278343e+13
+
+ver5:
+unrolling the most nested loop by 8 times with max macro and BLKSIZE as #define
+
+$ gcc ver5.c && ./a.out
+Time: 2.150640e+00 
+Check: 1.278343e+13
+
+$ gcc -O2 ver5.c && ./a.out
+Time: 1.537436e+00 
+Check: 1.278343e+13
+
+ver6:
+SSE3 vectors
+
+$ gcc ver6.c && ./a.out
+Time: 2.089225e+00 
+Check: 1.278343e+13
+
+$ gcc -O2 ver6.c && ./a.out
+Time: 1.277388e+00 
+Check: 1.278343e+13
