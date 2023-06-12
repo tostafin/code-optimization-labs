@@ -1,153 +1,155 @@
-ver0:
-
-$ gcc ver0.c && ./a.out
-Time: 8.795843e+00 
-Check: 1.278343e+13
-
-$ gcc -O2 ver0.c && ./a.out
-Time: 2.100054e+00 
-Check: 1.278343e+13
-
-
-ver1:
-SIZE as #define, A matrix changed to a 1D array of SIZE * SIZE size
-
-$ gcc ver1.c && ./a.out
-Time: 6.758259e+00 
-Check: 1.278343e+13
-
-$ gcc -O2 ver1.c && ./a.out
-Time: 1.836004e+00 
-Check: 1.278343e+13
-
-
-ver2:
-indexing with a macro
-
-$ gcc ver2.c && ./a.out
-Time: 6.673932e+00 
-Check: 1.278343e+13
-
-$ gcc -O2 ver2.c && ./a.out
-Time: 2.062876e+00 
-Check: 1.278343e+13
-
-ver3:
-putting hot variables into registers and making ints unsigned
-
-$ gcc ver3.c && ./a.out
-Time: 4.086753e+00 
-Check: 1.278343e+13
-
-$ gcc -O2 ver3.c && ./a.out
-Time: 1.959673e+00 
-Check: 1.278343e+13
-
-ver4:
-put A[i][i] and A[j][i] into register variables
-
-$ gcc ver4.c && ./a.out
-Time: 3.494409e+00 
-Check: 1.278343e+13
-
-$ gcc -O2 ver4.c && ./a.out
-Time: 1.890421e+00 
-Check: 1.278343e+13
-
-ver5:
-unrolling the most nested loop by 8 times with max macro and BLKSIZE as #define
-
-$ gcc ver5.c && ./a.out
-Time: 2.150640e+00 
-Check: 1.278343e+13
-
-$ gcc -O2 ver5.c && ./a.out
-Time: 1.537436e+00 
-Check: 1.278343e+13
-
-ver6:
-SSE3 vectors
-
-$ gcc ver6.c && ./a.out
-Time: 2.089225e+00 
-Check: 1.278343e+13
-
-$ gcc -O2 ver6.c && ./a.out
-Time: 1.277388e+00 
-Check: 1.278343e+13
-
-ver7:
-AVX vectors
-
-$ gcc -mavx ver7.c && ./a.out
-Time: 1.949933e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -march=native ver7.c && ./a.out
-Time: 1.843155e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -mfma ver7.c && ./a.out
-Time: 1.743650e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -march=native -mfma ver7.c && ./a.out
-Time: 1.842715e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 ver7.c && ./a.out
-Time: 1.763218e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 -march=native ver7.c && ./a.out
-Time: 1.449270e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 -mfma ver7.c && ./a.out
-Time: 1.293382e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 -march=native -mfma ver7.c && ./a.out
-Time: 1.362646e+00 
-Check: 1.278343e+13
-
-ver8:
-unroll the most nested loop to 16
-
-$ gcc -mavx ver8.c && ./a.out
-Time: 1.749927e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -march=native ver8.c && ./a.out
-Time: 1.804594e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -mfma ver8.c && ./a.out
-Time: 1.750794e+00
-Check: 1.278343e+13
-
-$ gcc -mavx -march=native -mfma ver8.c && ./a.out
-Time: 1.840896e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 ver8.c && ./a.out
-Time: 1.313394e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 -march=native ver8.c && ./a.out
-Time: 1.404186e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 -mfma ver8.c && ./a.out
-Time: 1.235206e+00 
-Check: 1.278343e+13
-
-$ gcc -mavx -O2 -march=native -mfma ver8.c && ./a.out
-Time: 1.293643e+00 
-Check: 1.278343e+13
-
-ver9:
-512-bit AVX
-$ gcc -mavx512f ver8.c && ./a.out
-
-Illegal instruction (core dumped)
+++ gcc ver0.c
+++ ./a.out
+call LUPDecompose
+Time: 2.773281e+01 
+Check: 2.114190e+13 
+++ gcc ver0.c -O2
+++ ./a.out
+call LUPDecompose
+Time: 7.069471e+00 
+Check: 2.114190e+13 
+++ gcc ver1.c
+++ ./a.out
+call LUPDecompose
+Time: 1.826382e+01 
+Check: 2.114190e+13 
+++ gcc ver1.c -O2
+++ ./a.out
+call LUPDecompose
+Time: 7.252000e+00 
+Check: 2.114190e+13 
+++ gcc ver2.c
+++ ./a.out
+call LUPDecompose
+Time: 1.832996e+01 
+Check: 2.114190e+13 
+++ gcc ver2.c -O2
+++ ./a.out
+call LUPDecompose
+Time: 7.189671e+00 
+Check: 2.114190e+13 
+++ gcc ver3.c
+++ ./a.out
+call LUPDecompose
+Time: 1.148213e+01 
+Check: 2.114190e+13 
+++ gcc ver3.c -O2
+++ ./a.out
+call LUPDecompose
+Time: 7.574769e+00 
+Check: 2.114190e+13 
+++ gcc ver4.c
+++ ./a.out
+call LUPDecompose
+Time: 9.831235e+00 
+Check: 2.114190e+13 
+++ gcc ver4.c -O2
+++ ./a.out
+call LUPDecompose
+Time: 7.211223e+00 
+Check: 2.114190e+13 
+++ gcc ver5.c
+++ ./a.out
+call LUPDecompose
+Time: 1.007365e+01 
+Check: 2.114190e+13 
+++ gcc ver5.c -O2
+++ ./a.out
+call LUPDecompose
+Time: 7.278377e+00 
+Check: 2.114190e+13 
+++ gcc ver6.c
+++ ./a.out
+call LUPDecompose
+Time: 9.526885e+00 
+Check: 2.114190e+13 
+++ gcc ver6.c -O2
+++ ./a.out
+call LUPDecompose
+Time: 6.953717e+00 
+Check: 2.114190e+13 
+++ gcc -mavx ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 7.862592e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -march=native ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 7.944642e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -mfma ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 7.889634e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -march=native -mfma ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 7.753014e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 6.020808e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 -march=native ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 6.319188e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 -mfma ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 6.047119e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 -march=native -mfma ver7.c
+++ ./a.out
+call LUPDecompose
+Time: 6.277622e+00 
+Check: 2.114190e+13 
+++ gcc -mavx ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 7.761621e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -march=native ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 7.710734e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -mfma ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 7.686310e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -march=native -mfma ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 8.051523e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 6.029474e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 -march=native ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 6.443042e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 -mfma ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 5.841399e+00 
+Check: 2.114190e+13 
+++ gcc -mavx -O2 -march=native -mfma ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 6.301219e+00 
+Check: 2.114190e+13 
+++ gcc -mavx512f ver8.c
+++ ./a.out
+call LUPDecompose
+Time: 7.964866e+00 
+Check: 2.114190e+13

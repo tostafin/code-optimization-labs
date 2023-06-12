@@ -5,7 +5,7 @@
 #include <math.h>
 #include <assert.h>
 
-#define SIZE 1500
+#define SIZE 2500
 
 static double gtod_ref_time_sec = 0.0;
 

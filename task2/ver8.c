@@ -6,7 +6,7 @@
 #include <assert.h>
 #include <immintrin.h>
 
-#define SIZE 1500
+#define SIZE 2500
 #define BLKSIZE 16
 
 #define IDX(i, j, n) (((j)+ (i)*(n)))

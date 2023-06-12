@@ -77,7 +77,7 @@ int LUPDecompose(double **A, int N, double Tol, int *P) {
 int main(void) {
     int i, j, iret;
     double dtime;
-    int SIZE = 1500;
+    int SIZE = 2500;
     double **A = malloc(SIZE * sizeof(double*));
     assert(A != NULL);
     for (i = 0; i < SIZE; i++) {
