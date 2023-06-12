@@ -100,16 +100,54 @@ Time: 1.763218e+00
 Check: 1.278343e+13
 
 $ gcc -mavx -O2 -march=native ver7.c && ./a.out
-call LUPDecompose
 Time: 1.449270e+00 
 Check: 1.278343e+13
 
 $ gcc -mavx -O2 -mfma ver7.c && ./a.out
-call LUPDecompose
 Time: 1.293382e+00 
 Check: 1.278343e+13
 
 $ gcc -mavx -O2 -march=native -mfma ver7.c && ./a.out
-call LUPDecompose
 Time: 1.362646e+00 
 Check: 1.278343e+13
+
+ver8:
+unroll the most nested loop to 16
+
+$ gcc -mavx ver8.c && ./a.out
+Time: 1.749927e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -march=native ver8.c && ./a.out
+Time: 1.804594e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -mfma ver8.c && ./a.out
+Time: 1.750794e+00
+Check: 1.278343e+13
+
+$ gcc -mavx -march=native -mfma ver8.c && ./a.out
+Time: 1.840896e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 ver8.c && ./a.out
+Time: 1.313394e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 -march=native ver8.c && ./a.out
+Time: 1.404186e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 -mfma ver8.c && ./a.out
+Time: 1.235206e+00 
+Check: 1.278343e+13
+
+$ gcc -mavx -O2 -march=native -mfma ver8.c && ./a.out
+Time: 1.293643e+00 
+Check: 1.278343e+13
+
+ver9:
+512-bit AVX
+$ gcc -mavx512f ver8.c && ./a.out
+
+Illegal instruction (core dumped)

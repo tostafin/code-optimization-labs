@@ -39,8 +39,8 @@ int LUPDecompose(double *A, int N, double Tol, int *P) {
 
     register unsigned int i, j, k, imax; 
     register double tmp1, tmp2;
-    register __m256d temp0, temp1, temp2, temp3;
-    register __m256d mm_subtrahend;
+    register __m512d temp0, temp1;
+    register __m512d mm_subtrahend;
 
     for (i = 0; i <= N; i++)
         P[i] = i; //Unit permutation matrix, P[N] initialized with N
@@ -83,21 +83,20 @@ int LUPDecompose(double *A, int N, double Tol, int *P) {
             mm_subtrahend[1] = tmp2;
             mm_subtrahend[2] = tmp2;
             mm_subtrahend[3] = tmp2;
+            mm_subtrahend[4] = tmp2;
+            mm_subtrahend[5] = tmp2;
+            mm_subtrahend[6] = tmp2;
+            mm_subtrahend[7] = tmp2;
             for (k = i + 1; k < N; )
                 if (k < max((SIZE - BLKSIZE), 0)) {
-                    temp0 = _mm256_loadu_pd(A + IDX(j, k, SIZE));
-                    temp1 = _mm256_loadu_pd(A + IDX(i, k, SIZE));
-                    temp2 = _mm256_loadu_pd(A + IDX(j, k + 4, SIZE));
-                    temp3 = _mm256_loadu_pd(A + IDX(i, k + 4, SIZE));
+                    temp0 = _mm512_loadu_pd(A + IDX(j, k, SIZE));
+                    temp1 = _mm512_loadu_pd(A + IDX(i, k, SIZE));
 
-                    temp1 = _mm256_mul_pd(temp1, mm_subtrahend);
-                    temp3 = _mm256_mul_pd(temp3, mm_subtrahend);
+                    temp1 = _mm512_mul_pd(temp1, mm_subtrahend);
 
-                    temp0 = _mm256_sub_pd(temp0, temp1);
-                    temp2 = _mm256_sub_pd(temp2, temp3);
+                    temp0 = _mm512_sub_pd(temp0, temp1);
 
-                    _mm256_storeu_pd(A + IDX(j, k, SIZE), temp0);
-                    _mm256_storeu_pd(A + IDX(j, k + 4, SIZE), temp2);
+                    _mm512_storeu_pd(A + IDX(j, k, SIZE), temp0);
 
                     k += BLKSIZE;
                 } else {

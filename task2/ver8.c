@@ -7,7 +7,7 @@
 #include <immintrin.h>
 
 #define SIZE 1500
-#define BLKSIZE 8
+#define BLKSIZE 16
 
 #define IDX(i, j, n) (((j)+ (i)*(n)))
 #define max(a,b) (((a)>(b))?(a):(b))
@@ -39,7 +39,7 @@ int LUPDecompose(double *A, int N, double Tol, int *P) {
 
     register unsigned int i, j, k, imax; 
     register double tmp1, tmp2;
-    register __m256d temp0, temp1, temp2, temp3;
+    register __m256d temp0, temp1, temp2, temp3, temp4, temp5, temp6, temp7;
     register __m256d mm_subtrahend;
 
     for (i = 0; i <= N; i++)
@@ -89,15 +89,25 @@ int LUPDecompose(double *A, int N, double Tol, int *P) {
                     temp1 = _mm256_loadu_pd(A + IDX(i, k, SIZE));
                     temp2 = _mm256_loadu_pd(A + IDX(j, k + 4, SIZE));
                     temp3 = _mm256_loadu_pd(A + IDX(i, k + 4, SIZE));
+                    temp4 = _mm256_loadu_pd(A + IDX(j, k + 8, SIZE));
+                    temp5 = _mm256_loadu_pd(A + IDX(i, k + 8, SIZE));
+                    temp6 = _mm256_loadu_pd(A + IDX(j, k + 12, SIZE));
+                    temp7 = _mm256_loadu_pd(A + IDX(i, k + 12, SIZE));
 
                     temp1 = _mm256_mul_pd(temp1, mm_subtrahend);
                     temp3 = _mm256_mul_pd(temp3, mm_subtrahend);
+                    temp5 = _mm256_mul_pd(temp5, mm_subtrahend);
+                    temp7 = _mm256_mul_pd(temp7, mm_subtrahend);
 
                     temp0 = _mm256_sub_pd(temp0, temp1);
                     temp2 = _mm256_sub_pd(temp2, temp3);
+                    temp4 = _mm256_sub_pd(temp4, temp5);
+                    temp6 = _mm256_sub_pd(temp6, temp7);
 
                     _mm256_storeu_pd(A + IDX(j, k, SIZE), temp0);
                     _mm256_storeu_pd(A + IDX(j, k + 4, SIZE), temp2);
+                    _mm256_storeu_pd(A + IDX(j, k + 8, SIZE), temp4);
+                    _mm256_storeu_pd(A + IDX(j, k + 12, SIZE), temp6);
 
                     k += BLKSIZE;
                 } else {
